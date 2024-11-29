@@ -1,0 +1,1 @@
+export type AudioFormat = "mp3" | "wav" | "flac" | "ogg" | "m4a"
