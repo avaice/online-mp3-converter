@@ -27,7 +27,7 @@ export default function Home() {
     const input = document.createElement("input") as HTMLInputElement;
     input.type = "file";
     input.multiple = true;
-    input.accept = ".mp3,.wav,.flac,.ogg,.m4a";
+    input.accept = ".mp3,.wav,.flac,.ogg,.m4a,.mp4";
     input.onchange = (e) => {
       const selectedFiles = (e.target as HTMLInputElement).files;
       if (selectedFiles) {
@@ -74,6 +74,7 @@ export default function Home() {
         "audio/flac",
         "audio/ogg",
         "audio/aac",
+        "video/mp4",
       ];
       const noAcceptedFiles = Array.from(e.dataTransfer.files).filter(
         (file) => !accept.includes(file.type)
