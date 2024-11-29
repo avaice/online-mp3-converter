@@ -1,7 +1,7 @@
 import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
 import { getExt } from "./ext";
 
-export const mp3ConverterWorker = async (
+export const mp3Converter = async (
   file: File,
   bitrate: number,
   output: "audio/mpeg" | "audio/wav" | "audio/flac" | "audio/ogg" | "audio/aac",

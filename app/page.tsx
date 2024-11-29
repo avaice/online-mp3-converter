@@ -3,11 +3,11 @@
 
 import { useCallback, useMemo, useState } from "react";
 import { AudioFormat } from "./types";
-import { mp3ConverterWorker } from "./_lib/mp3ConverterWorker";
 import { getMimeType } from "./_lib/ext";
 import { Selector } from "./_components/Selector";
 import { Slider } from "./_components/Slider";
 import { createZip } from "./_lib/createZip";
+import { mp3Converter } from "./_lib/mp3Converter";
 
 export default function Home() {
   const [format, setFormat] = useState<AudioFormat>("mp3");
@@ -110,7 +110,7 @@ export default function Home() {
           })
         );
 
-        mp3ConverterWorker(
+        mp3Converter(
           file.file,
           bitrate,
           getMimeType(format),
