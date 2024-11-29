@@ -16,7 +16,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "MP3変換ぼうや",
   description: "MP3変換ぼうやは、ブラウザ上で音声ファイルを MP3などのフォーマットに変換するツールです。",
-  keywords: "MP3, WAV, FLAC, OGG, M4A, 変換, 音声, ツール, 無料, オンライン",
+  keywords: "MP3, WAV, FLAC, OGG, M4A, 変換, 音声, ツール, 無料, オンライン, 動画音声",
 };
 
 export default function RootLayout({
