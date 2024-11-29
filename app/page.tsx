@@ -214,10 +214,10 @@ export default function Home() {
           </div>
 
           <div>
-            <p>
+            <p className="text-sm">
               MP3, WAVなどのファイルを好きなフォーマットに変換できます。
               <br />
-              一括変換もできます。
+              変換処理はブラウザ上で行われるため、サーバーにアップロードされることはありません。
             </p>
           </div>
 
