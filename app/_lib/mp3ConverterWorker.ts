@@ -17,8 +17,7 @@ export const mp3ConverterWorker = async (
   ffmpeg.FS("writeFile", "sound", await fetchFile(file));
   await ffmpeg.run("-i", "sound", "-b:a", `${bitrate}k`, outputFileName);
   const data = ffmpeg.FS("readFile", outputFileName);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const blob = new Blob([data.buffer as any], { type: output });
+  const blob = new Blob([data.buffer as BlobPart], { type: output });
 
   // cleanup
   ffmpeg.FS("unlink", outputFileName);
