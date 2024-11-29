@@ -8,7 +8,7 @@ export const mp3ConverterWorker = async (
   progress: (arg: { ratio: number }) => void
 ): Promise<File> => {
   const outputExt = getExt(output);
-  const outputFileName = `${file.name.split(".")[0]}.${outputExt}`;
+  const outputFileName = `output_${new Date().getTime()}.${outputExt}`;
   const ffmpeg = createFFmpeg({
     corePath: "https://unpkg.com/@ffmpeg/core@0.10.0/dist/ffmpeg-core.js",
   });
@@ -23,5 +23,5 @@ export const mp3ConverterWorker = async (
   ffmpeg.FS("unlink", outputFileName);
   ffmpeg.FS("unlink", "sound");
 
-  return new File([blob], outputFileName);
+  return new File([blob], `${file.name.split(".")[0]}.${outputExt}`);
 };
